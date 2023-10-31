@@ -1,5 +1,11 @@
 'use strict';
-
+const projects = [
+  {
+    title: "",
+    publishedAt: new Date(),
+    description:  "## وصف لمشروع جديد بالماركدون"
+  }
+]
 module.exports = {
   /**
    * An asynchronous register function that runs before
@@ -16,5 +22,16 @@ module.exports = {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/*{ strapi }*/) {},
+  async bootstrap({strapi}) {
+        const test = await strapi.entityService.deleteMany("api::project.project")
+        for (const project of projects) {
+          await strapi.entityService.create("api::project.project", {
+            data: {
+...project
+   
+            }
+          })
+        }
+
+  },
 };
