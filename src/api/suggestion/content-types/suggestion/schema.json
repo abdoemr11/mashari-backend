@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "suggestions",
+  "info": {
+    "singularName": "suggestion",
+    "pluralName": "suggestions",
+    "displayName": "suggestion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "suggestion_mail": {
+      "type": "email",
+      "required": false
+    }
+  }
+}
